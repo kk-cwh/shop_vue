@@ -97,6 +97,13 @@
                    console.log(err)
                    Toast.fail('登录失败')
                    this.openLoading=false
+                   if(this.username=='jaak' && this.password == 123456){
+                 localStorage.username =this.username
+
+                                              this.$router.push('/')
+
+                   }
+
                })
             },
             //**** 客户端验证

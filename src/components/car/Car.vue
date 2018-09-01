@@ -13,10 +13,12 @@
 	           </div>
 	           <div class="cartInformation carProInfo">
 	           	  <div>
-	           	  	{{item.proName}}
-	           	  </div>
-	           	  <div>
-	           	  	{{item.proPrice}}
+	           	  	{{item.proName}} 	           	  <div style="float:right;text-align:right;color:red;">	￥{{item.proPrice}}.00
+	           	  </div>	           	  </div>
+
+	           	  <div style="text-align:right;color:red;">
+                 &nbsp;
+	           	  	<!-- ￥{{item.proPrice}}.00 -->
 	           	  </div>
 	           	  <div>
 	           	  	<van-stepper v-model="item.homeValue" />

@@ -4,7 +4,7 @@
 	  <div class="perContent">
 			 <div class="container">
 			 	  <div class="userImg"><img  src="../../../static/img/userImg.png" /></div>
-          <div class="userName">dabao</div>
+          <div class="userName">{{userName}}</div>
 					<div class="userState">学会接受拒绝和拒绝别人.</div>
 			 </div>
 			 <div>
@@ -24,6 +24,7 @@ import { Cell, CellGroup ,Toast} from 'vant';
 export default{
   data(){
     return{
+			userName:'未登录'
 	  }
   },
   components:{
@@ -32,12 +33,14 @@ export default{
 		[Cell.name]:Cell,
 		[CellGroup.name]:CellGroup
   },
-   created(){ //一进入页面就判断，本地数据库有没有用户信息，如果有提示用户已登录，直接到首页
-            if(localStorage.userInfo){
-                // Toast.success('此账号已登录')
+   mounted(){ //一进入页面就判断，本地数据库有没有用户信息，如果有提示用户已登录，直接到首页
+            if(localStorage.username){
+								// Toast.success('此账号已登录')
+								this.userName =localStorage.username
             }else{
-              Toast.success('你还未登录')
-              this.$router.push('/login')
+							Toast.success('你还未登录')
+							
+              // this.$router.push('/login')
             }
         },
 }
